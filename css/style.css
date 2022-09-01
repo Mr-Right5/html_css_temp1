@@ -1,0 +1,423 @@
+/* start var */
+:root{
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+}
+/* end var */
+/* special------------- */
+html{
+    scroll-behavior: smooth;
+}
+.special{
+    color: #ebeced;
+    margin: 0;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    
+}
+.special + p{
+    margin: -30px 0 0;
+    text-align: center;
+    color: #797979;
+    font-size: 20px;
+}
+@media (max-width:768px) {
+    .special{
+        font-size: 80px;
+    }
+    .special + p{
+        margin: -25px 0 0;
+    }
+    .contact p.lable, .contact a.link{
+        font-size: 25px;
+    }
+}
+/* special------------- */
+/* Global rules */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+.containar{
+    padding-left:  15px; ;
+    padding-right:15px ;
+    margin-left:auto ;
+    margin-right: auto;
+}
+/* smaal */
+@media (min-width:768px){
+    .containar{ width: 750px;}
+}
+/* meduim */
+@media (min-width:992px){
+    .containar{ width: 970px;}
+}
+/* laegr */
+@media (min-width:1200px){
+    .containar{ width: 1170px;}
+}
+/* End global rules */
+
+/* start header --------------------*/
+.header{
+    padding: 20px;
+}
+.header .containar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width:60px;
+}
+.header .links .bar {
+width: 30px;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-end;
+}
+.header .links{
+    position: relative;
+}
+.header .links:hover .bar span:nth-child(2){
+    width: 100%;
+}
+.header .links .bar span{
+    background-color: #333;
+    margin-bottom: 5px;
+}
+.header .links .bar span:first-child{
+    width: 100%;
+    height: 2px;
+}
+.header .links .bar span:nth-child(2) {
+    width: 50%;
+    height: 2px;
+    transition: 0.3s;
+}
+.header .links .bar span:last-child{
+    width: 100%;
+    height: 2px;
+}
+.header .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #f6f6f6;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 10px);
+    display: none;
+    z-index: 10;
+}
+.header .links ul::before{
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: -20px;
+    border: 10px solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+}
+.header .links:hover ul{
+    display: block;
+}
+.header .links ul a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+.header .links ul a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a{
+    border-bottom: 1px solid #ddd;
+}
+/* end header ---------------------*/
+/* strat landing-------------------- */
+.landing{
+    background-image: url(../img/monochrome-black-clouds-mountains-wallpaper-preview.jpg);
+    background-size: cover;
+    height:calc(100vh - 64px);
+    position: relative;
+}
+.landing .intro-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+.landing h1{
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
+}
+.landing p{
+    margin: 0;
+}
+/* end landing---------------------- */
+
+/* start features */
+.features {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ddd;
+}
+.features .containar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.features .containar{
+    text-align: center;
+}
+.features .containar .feat i{
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.features .containar .feat h3{
+    font-weight: 800;
+}
+
+.features .containar .feat p{
+color: #999;
+line-height: 1.8;
+}
+/* end features */
+/* start srv------------------ */
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .containar .services-contents{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+.services .containar .services-contents .col:nth-child(3){
+    display: block;
+}
+@media (max-width:1199px) {
+    .services .containar .services-contents .col:nth-child(3){
+        display: none;
+    }
+}
+
+.services .containar .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width:768px) {
+    .services .containar .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .srv .srv-text {
+    flex: 1;
+}
+.services .containar .services-contents .srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .services-contents .srv .srv-text h3 {
+    margin: 0 0 20px;
+}
+.services .containar .services-contents .srv p{
+    color: #999;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .containar .services-contents .col .srv .img{
+    position: relative;
+}
+.services .containar .services-contents .col .srv img{
+    width: 260px;
+    
+}
+.services .containar .services-contents .col .srv .img::before{
+    content: "";
+    width: 100px;
+    height: calc(100% + 100px);
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    z-index: -1;
+}
+.services .containar .services-contents .col:nth-child(3) .srv{
+    justify-content: center;
+}
+
+/* end srv------------------------ */
+/* start portfoli */
+.portfolio{
+    background-color: #ddd;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.portfolio .portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+.portfolio .card{
+    background-color: white;
+}
+
+.portfolio .card img{
+    max-width: 100%;
+}
+.portfolio .card .portfolio-text{
+    padding: 20px;    
+}
+.portfolio .card .portfolio-text h3{
+    margin: 0;
+}
+.portfolio .card .portfolio-text h3 + p{
+    color: #797979;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* end portfolio */
+/* start abuot */
+.abuot{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.abuot .abuot-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+@media (max-width:991px){
+    .abuot .abuot-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.abuot .abuot-content .pic{
+    position: relative;
+    width: 250px;
+}
+.abuot .abuot-content .pic::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: calc(100% + 80px);
+    z-index: -1;
+    top: -40px;
+    left: -40px;
+    background-color: #ddd;
+}
+.abuot .abuot-content .pic::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    z-index: -1;
+    top: -40px;
+    right: -150px;
+    border-bottom: #10cab7 solid 80px;
+    border-left: #10cab7 solid 80px;
+}
+@media (max-width: 991px){
+    .abuot .abuot-content .pic::before,.abuot .abuot-content .pic::after{
+        display: none;
+    }
+    .abuot .pic{
+        margin: 0 auto 60px;
+    }
+}
+.abuot .abuot-content img{
+    width: 100%;
+}
+.abuot .text{
+    flex-basis: calc(100% - 500px);
+}
+.abuot .text p:first-child{
+    line-height: 2;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+.abuot .text hr{
+    width: 50%;
+    border-color: #10cab7;
+    display: inline-block;
+}
+.abuot .text p:last-child{
+    color: #797979;
+    line-height: 2;
+    margin-bottom: 60px;
+}
+/* end abuot */
+
+/* start content */
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #ddd;
+}
+.contact .contact-content{
+    margin-top: 100px;
+    text-align: center;
+}
+p.lable {
+    font-size: 35px;
+    font-weight: 800;
+    color: #2c4755;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+a.link{
+    font-size: 35px;
+    font-weight: 800;
+    color: #10cab7;
+    margin-bottom: 15px;
+}
+.contact .sos {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.contact i{
+    margin: 17px 0 0 10px;
+    color: #2c4755;
+}
+.contact .sos p{
+    font-weight: 300;
+    font-size: 16px;
+}
+/* end content */
+
+/* --------------------- */
+.footer{
+    padding: 30px 10px;
+    background-color: #2c4755;
+    color: white;
+    text-align: center;
+}
+.footer span{
+    color: #10cab7;
+    font-weight: bold;
+}
